@@ -9,7 +9,7 @@ backend:
 media_folder: "public/upload"
 public_folder: "/"
 
-site_url: https://legalisierungjetzt.netlify.app/
+site_url: https://sailsnake-decapcms.netlify.app
 
 media_library:
   name: cloudinary
@@ -17,6 +17,37 @@ media_library:
   config:
     cloud_name: <YOUR_CLOUD_NAME_HERE>
     api_key: <YOUR_API_KEY_HERE>
+
+# SEO anchor:
+seo: &seo
+  name: "SEOmetaData"
+  label: "SEO"
+  widget: "object"
+  collapsed: true
+  fields:
+    - {
+        name: "metaTitle",
+        label: "SEO Title",
+        widget: "string",
+        default: "{{ title }}",
+        required: true,
+      }
+    - {
+        name: "metaDescription",
+        label: "SEO Description",
+        widget: "string",
+        pattern: [".{20,160}", "between 20 and 160 characters"],
+        required: true,
+        hint: "must be between 20 and 160 characters",
+      }
+    - { name: "metaImage", label: "SEO image", widget: "image" }
+    - {
+        name: "keywords",
+        label: "keywords",
+        widget: "string",
+        hint: "keywords are comma seperated",
+        required: false,
+      }
 
 collections:
   - name: "globalContent"
@@ -53,16 +84,17 @@ collections:
         fields:
           - { name: "title", label: "Title", widget: "string" }
           - { name: "content", label: "Content", widget: "markdown" }
-      - name: "letter"
-        label: "Letter"
-        file: "content/pages/letter.md"
+          - *seo
+      - name: "typography"
+        label: "Typography"
+        file: "content/pages/typography.md"
         fields:
           - { name: "title", label: "Title", widget: "string" }
           - { name: "content", label: "Content", widget: "markdown" }
-      - name: "events"
-        label: "Events"
+      - name: "Fiddly diddlies"
+        label: "diddlies"
         extension: json
-        file: "content/pages/events.json"
+        file: "content/pages/fiddly-diddlies.json"
         fields:
           - { name: "title", label: "Title", widget: "string" }
           - {
