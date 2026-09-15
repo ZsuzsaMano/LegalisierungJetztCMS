@@ -9,7 +9,7 @@ backend:
 media_folder: "public/upload"
 public_folder: "/"
 
-site_url: https://sailsnake-decapcms.netlify.app
+site_url: https://legalisierungjetzt.netlify.app/
 
 media_library:
   name: cloudinary
@@ -85,16 +85,16 @@ collections:
           - { name: "title", label: "Title", widget: "string" }
           - { name: "content", label: "Content", widget: "markdown" }
           - *seo
-      - name: "typography"
-        label: "Typography"
-        file: "content/pages/typography.md"
+      - name: "letter"
+        label: "Letter"
+        file: "content/pages/letter.md"
         fields:
           - { name: "title", label: "Title", widget: "string" }
           - { name: "content", label: "Content", widget: "markdown" }
-      - name: "Fiddly diddlies"
-        label: "diddlies"
+      - name: "Events"
+        label: "events"
         extension: json
-        file: "content/pages/fiddly-diddlies.json"
+        file: "content/pages/events.json"
         fields:
           - { name: "title", label: "Title", widget: "string" }
           - {
